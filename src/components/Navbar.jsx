@@ -6,7 +6,7 @@ const Navbar = () => {
      
         <NavLink className='mr-3 ' to='/'><li>Home</li></NavLink>
         <NavLink  className='mr-3'  to='/exploreartworks'><li>Explore Artworks</li></NavLink>
-        <NavLink  className='mr-3'  to=''><li>Add Artwork</li></NavLink>
+        <NavLink  className='mr-3'  to='/auth/addart'><li>Add Artwork</li></NavLink>
         <NavLink  className='mr-3'  to=''><li>My Gallery</li></NavLink>
         <NavLink  className='mr-3'  to=''><li>My Favorites</li></NavLink>
     
@@ -38,14 +38,19 @@ const Navbar = () => {
   </div>
   <div className="navbar-end gap-4">
      
-     <NavLink to='/auth/login'> 
-      <a className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500 ">Login</a> 
-      </NavLink>
-     
-     <NavLink to='/auth/register'> 
-     <a className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500">Register</a>
-      </NavLink>
+   <NavLink
+  to="/auth/login"
+  className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
+>
+  Login
+</NavLink>
 
+    <NavLink
+  to="/auth/register"
+  className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
+>
+  Registr
+</NavLink>
 
    
   </div>

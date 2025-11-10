@@ -59,6 +59,7 @@ import Login from "../pages/Login";
 
 import Register from "../pages/Register";
 import { createBrowserRouter } from "react-router";
+import AddArtWorks from "../pages/AddArtWorks";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,7 @@ const router = createBrowserRouter([
       {
         path: "/exploreartworks",
         element: <ExploreArtworks></ExploreArtworks>,
+        loader:()=>fetch('http://localhost:3000/artifys')
       },
     ],
   },
@@ -86,6 +88,10 @@ const router = createBrowserRouter([
       {
         path: "/auth/register",
         element:<Register></Register>
+      },
+      {
+        path: "/auth/addart",
+        element:<AddArtWorks></AddArtWorks>
       },
     ],
   },
