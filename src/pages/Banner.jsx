@@ -1,14 +1,4 @@
-// import React from 'react';
 
-// const Banner = () => {
-//     return (
-//         <div>
-//           wesftgwestgerdf  
-//         </div>
-//     );
-// };
-
-// export default Banner;
 
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
@@ -17,18 +7,18 @@ import "react-image-gallery/styles/css/image-gallery.css";
 const Banner = () => {
   const images = [
     {
-      original: 'https://i.ibb.co/1fQVdFjk/download-1.jpg',
-      thumbnail: 'https://i.ibb.co/1fQVdFjk/download-1.jpg',
+      original: 'https://images.unsplash.com/photo-1532640331846-d2da5987c3ee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1520',
+      thumbnail: 'https://images.unsplash.com/photo-1532640331846-d2da5987c3ee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1520',
 
     },
     {
-      original: 'https://static.vecteezy.com/system/resources/thumbnails/023/533/570/small/generative-ai-psychedelic-space-banner-template-in-anime-manga-line-art-style-horizontal-illustration-of-the-future-landscape-with-mountains-planets-trees-moon-surrealist-escapism-concept-photo.jpg',
-      thumbnail: 'https://static.vecteezy.com/system/resources/thumbnails/023/533/570/small/generative-ai-psychedelic-space-banner-template-in-anime-manga-line-art-style-horizontal-illustration-of-the-future-landscape-with-mountains-planets-trees-moon-surrealist-escapism-concept-photo.jpg',
+      original: 'https://images.unsplash.com/photo-1580136579395-4bbb9ffdc4ca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1620',
+      thumbnail: 'https://images.unsplash.com/photo-1580136579395-4bbb9ffdc4ca?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1620',
       
     },
     {
-      original: 'https://i.ibb.co/KBZ2MP8/artistic-scene-inspired-by-art-nouveau-style-with-colorful-depictions.jpg',
-      thumbnail: 'https://i.ibb.co/KBZ2MP8/artistic-scene-inspired-by-art-nouveau-style-with-colorful-depictions.jpg',
+      original: 'https://images.unsplash.com/photo-1698943498560-70ad78c6cfe1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1181',
+      thumbnail: 'https://images.unsplash.com/photo-1698943498560-70ad78c6cfe1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1181',
       
     },
   ];
