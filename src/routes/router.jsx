@@ -60,6 +60,8 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import { createBrowserRouter } from "react-router";
 import AddArtWorks from "../pages/AddArtWorks";
+import ArtworkDetail from "../pages/ArtworkDetail";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
@@ -70,10 +72,27 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      // {
+      //   path: "/artDetail/:id",
+      //   element:<ArtworkDetail></ArtworkDetail>,
+      //   loader:({params})=> fetch(`http://localhost:3000/artifys/${params.id}`)
+
+      // },
+      {
+        path: "/artDetail/:id",
+        element: <ArtworkDetail />,
+        loader: ({ params }) => fetch(`http://localhost:3000/artifys/${params.id}`)
+      },
+
+      {
+        path: "/addart",
+        element: <AddArtWorks></AddArtWorks>
+      },
+
       {
         path: "/exploreartworks",
         element: <ExploreArtworks></ExploreArtworks>,
-        loader:()=>fetch('http://localhost:3000/artifys')
+        loader: () => fetch('http://localhost:3000/artifys')
       },
     ],
   },
@@ -87,12 +106,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/auth/register",
-        element:<Register></Register>
+        element: <Register></Register>
       },
-      {
-        path: "/auth/addart",
-        element:<AddArtWorks></AddArtWorks>
-      },
+
+
     ],
   },
   {
@@ -100,8 +117,8 @@ const router = createBrowserRouter([
     element: <h2>art layout</h2>,
   },
   {
-    path: "/*",
-    element: <h2>Error 404</h2>,
+    path: "*",
+    element: <ErrorPage></ErrorPage>
   },
 ]);
 

@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Banner from './Banner';
 import Artists from './Artists';
 import CommunityHighlights from './CommunityHighlights';
-import FeaturedArtworks from './FeaturedArtworks';
+// import FeaturedArtworks from './FeaturedArtworks';
 // const FeaturedArtpromise=fetch('http://localhost:3000/artifys')
 // .then(res=>res.json());
 const Home = () => {

@@ -1,9 +1,9 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { NavLink, useLoaderData } from 'react-router';
 
 const ExploreArtworks = () => {
     const data =useLoaderData();
-    console.log(data)
+    // console.log(data)
     return (
                
  <section className="py-16 ">
@@ -36,10 +36,18 @@ const ExploreArtworks = () => {
                 {art.category}
               </span>
 
-              <button className=" md:ml-[70px] bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+            {/* <NavLink to={`/artDetail/${id}`}>
+                <button className=" md:ml-[70px] bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
                 View Details
               </button>
-         
+            </NavLink>
+          */}
+          <NavLink to={`/artDetail/${art._id}`}>
+         <button className="md:ml-[70px] bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm px-5 py-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+           View Details
+         </button>
+       </NavLink>
+
             </div>
           </div>
         ))}
