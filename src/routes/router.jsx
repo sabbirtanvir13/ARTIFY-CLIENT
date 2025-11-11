@@ -63,6 +63,8 @@ import AddArtWorks from "../pages/AddArtWorks";
 import ArtworkDetail from "../pages/ArtworkDetail";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "../contexts/PrivateRoute";
+import MyGallery from "../pages/MyGallery";
+import MyFavorites from "../pages/MyFavorites";
 
 const router = createBrowserRouter([
   {
@@ -72,13 +74,9 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+       
       },
-      // {
-      //   path: "/artDetail/:id",
-      //   element:<ArtworkDetail></ArtworkDetail>,
-      //   loader:({params})=> fetch(`http://localhost:3000/artifys/${params.id}`)
-
-      // },
+ 
       {
         path: "/artDetail/:id",
         element: <ArtworkDetail />,
@@ -89,6 +87,18 @@ const router = createBrowserRouter([
         path: "/addart",
         element:<PrivateRoute>
            <AddArtWorks></AddArtWorks>
+        </PrivateRoute>
+      },
+      {
+        path: "/gallery",
+        element:<PrivateRoute>
+         <MyGallery></MyGallery>
+        </PrivateRoute>
+      },
+      {
+        path: "/favorites",
+        element:<PrivateRoute>
+          <MyFavorites></MyFavorites>
         </PrivateRoute>
       },
 

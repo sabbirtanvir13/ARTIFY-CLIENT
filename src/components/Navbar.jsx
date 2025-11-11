@@ -8,7 +8,7 @@ const Navbar = () => {
   const handleSignOut = () => {
     signOutUser()
       .then(()=>{
-        alert('lagout success')
+         alert('lagout success')
       })
       .then()
   }
@@ -20,8 +20,8 @@ const Navbar = () => {
     {
       User && <>
         <NavLink className='mr-3' to='/addart'><li>Add Artwork</li></NavLink>
-        <NavLink className='mr-3' to=''><li>My Gallery</li></NavLink>
-        <NavLink className='mr-3' to=''><li>My Favorites</li></NavLink>
+        <NavLink className='mr-3' to='/gallery'><li>My Gallery</li></NavLink>
+        <NavLink className='mr-3' to='/favorites'><li>My Favorites</li></NavLink>
 
       </>
     }
@@ -53,38 +53,6 @@ const Navbar = () => {
         </ul>
       </div>
 
-
-      {/* <div className="navbar-end gap-4">
-        {User ? (
-          <button
-            onClick={handleSignOut} 
-            className="btn rounded-2xl text-white bg-gradient-to-r from-red-500 to-pink-500"
-          >
-            Logout
-          </button>
-        ) : (
-          <>
-            <NavLink
-              to="/auth/login"
-              className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
-            >
-              Login
-            </NavLink>
-
-            <NavLink
-              to="/auth/register"
-              className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
-            >
-              Register
-            </NavLink>
-          </>
-
-        )}
-
-
-
-      </div> */}
-
       <div className="navbar-end gap-4">
   {User ? (
     <div className="relative group">
@@ -102,7 +70,7 @@ const Navbar = () => {
         </p>
         <button
           onClick={handleSignOut}
-          className="btn btn-sm w-full rounded-2xl text-white bg-gradient-to-r from-red-500 to-pink-500"
+          className="btn btn-sm w-full rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500"
         >
           Logout
         </button>
@@ -112,14 +80,14 @@ const Navbar = () => {
     <>
       <NavLink
         to="/auth/login"
-        className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
+        className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500"
       >
         Login
       </NavLink>
 
       <NavLink
         to="/auth/register"
-        className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
+        className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500 hover:from-purple-500 hover:to-indigo-500"
       >
         Register
       </NavLink>
