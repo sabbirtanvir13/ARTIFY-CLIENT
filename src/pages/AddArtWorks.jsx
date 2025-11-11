@@ -242,7 +242,7 @@ const AddArtWorks = () => {
           <input
             type="text"
             name="userName"
-            value={user?.displayName || "Anonymous"}
+            value={user?.displayName || ''}
             readOnly
             className="input input-bordered w-full bg-gray-100"
           />
