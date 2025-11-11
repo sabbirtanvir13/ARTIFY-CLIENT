@@ -62,6 +62,7 @@ import { createBrowserRouter } from "react-router";
 import AddArtWorks from "../pages/AddArtWorks";
 import ArtworkDetail from "../pages/ArtworkDetail";
 import ErrorPage from "../pages/ErrorPage";
+import PrivateRoute from "../contexts/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -86,7 +87,9 @@ const router = createBrowserRouter([
 
       {
         path: "/addart",
-        element: <AddArtWorks></AddArtWorks>
+        element:<PrivateRoute>
+           <AddArtWorks></AddArtWorks>
+        </PrivateRoute>
       },
 
       {

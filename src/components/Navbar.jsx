@@ -54,7 +54,7 @@ const Navbar = () => {
       </div>
 
 
-      <div className="navbar-end gap-4">
+      {/* <div className="navbar-end gap-4">
         {User ? (
           <button
             onClick={handleSignOut} 
@@ -83,7 +83,50 @@ const Navbar = () => {
 
 
 
+      </div> */}
+
+      <div className="navbar-end gap-4">
+  {User ? (
+    <div className="relative group">
+
+      <img
+        src={User.photoURL || "https://i.ibb.co/3rYVZ7H/default-user.png"}
+        alt="User"
+        className="w-10 h-10 rounded-full cursor-pointer border-2 border-purple-400"
+      />
+
+  
+      <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded-lg p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+        <p className="font-semibold text-center text-gray-700 mb-2">
+          {User.displayName || "Unnamed User"}
+        </p>
+        <button
+          onClick={handleSignOut}
+          className="btn btn-sm w-full rounded-2xl text-white bg-gradient-to-r from-red-500 to-pink-500"
+        >
+          Logout
+        </button>
       </div>
+    </div>
+  ) : (
+    <>
+      <NavLink
+        to="/auth/login"
+        className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
+      >
+        Login
+      </NavLink>
+
+      <NavLink
+        to="/auth/register"
+        className="btn rounded-2xl text-white bg-gradient-to-r from-indigo-500 to-purple-500"
+      >
+        Register
+      </NavLink>
+    </>
+  )}
+</div>
+
 
 
     </div>
