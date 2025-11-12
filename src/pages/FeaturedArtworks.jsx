@@ -9,7 +9,7 @@ const FeaturedArtworks = ({FeaturedArtpromise}) => {
  <section className="py-16 ">
     
       <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold text-gray-800">
+        <h2 className="text-4xl font-bold text-gray-800" >
           Featured Artworks
         </h2>  
       </div>

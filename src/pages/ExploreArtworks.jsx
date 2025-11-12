@@ -7,7 +7,7 @@ const ExploreArtworks = () => {
   const data = useLoaderData();
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filter artworks by title or artist name
+  
   const filteredArtworks = data.filter(
     (art) =>
       art.title.toLowerCase().includes(searchTerm.toLowerCase()) ||

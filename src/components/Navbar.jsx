@@ -1,9 +1,50 @@
-import React, { use } from 'react';
+import React, { use, useEffect, useState, } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext';
 
 const Navbar = () => {
   const { User,  signOutUser } = use(AuthContext)
+
+
+// const [theme,setTheme]=useState(localStorage.getItem('theme')||'light')
+
+// useEffect(()=>{
+//      const html = document.querySelector("html");
+//       html.setAttribute("data-theme",'dark')
+//       localStorage.setItem('theme',theme)
+// },[theme])
+
+
+//   const handleTheme = (checked) => {
+//   setTheme(checked?'dark':'light')
+//         const html = document.querySelector("html");
+// if(checked){
+//   html.setAttribute("data-theme",'dark')
+// }else{
+//   html.setAttribute("data-theme",'light')
+// }
+  
+//   };
+
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    html.setAttribute("data-theme", theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const handleTheme = (checked) => {
+    setTheme(checked ? 'dark' : 'light');
+  };
+
+
+
+
+
+
+
+
 
   const handleSignOut = () => {
     signOutUser()
@@ -43,7 +84,8 @@ const Navbar = () => {
             }
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl text-[#1A1A1A]">Artify</a>
+        {/* <a className="btn btn-ghost text-xl text-[#1A1A1A]">Artify</a> */}
+           <a className="btn btn-ghost text-xl" style={{ color: theme === 'dark' ? 'white' : '#1A1A1A' }}>Artify</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -53,7 +95,33 @@ const Navbar = () => {
         </ul>
       </div>
 
+
+
+
       <div className="navbar-end gap-4">
+   
+      {/* <input
+           onChange={(e) => handleTheme(e.target.checked)}
+           type="checkbox"
+           defaultChecked={localStorage.getItem('theme') === "dark"}
+           className="toggle"/> */}
+
+
+<div className="flex items-center gap-2">
+  <input
+    type="checkbox"
+    checked={theme === 'dark'}
+    onChange={(e) => handleTheme(e.target.checked)}
+    className="toggle"
+  />
+  <span className={`${theme === 'dark' ? 'text-white' : 'text-black'}`}>
+    Dark Mode
+  </span>
+</div>
+
+
+
+
   {User ? (
     <div className="relative group">
 
