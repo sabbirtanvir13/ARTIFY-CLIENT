@@ -1,10 +1,27 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 
 const ArtworkDetail = () => {
   const data = useLoaderData();
   const art = data.result;
+  const [isFavorited, setIsFavorited] = useState(false); //
+
+  const handleFavorites = async () => {
+    try {
+      const response = await fetch(`http://localhost:3000/favorites`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ artworkId: art._id }),
+      });
+
+      if (response.ok) {
+        setIsFavorited(true);
+      }
+    } catch (error) {
+      console.error("Error adding to favorites:", error);
+    }
+  };
 
   return (
     <section className="max-w-6xl mx-auto my-16 px-6 md:px-10">
@@ -26,10 +43,13 @@ const ArtworkDetail = () => {
            <div className="flex gap-4 mt-6">
             <button className="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600 transition" >
                Like  </button>
-
-            <button className='px-5 py-2 rounded-full font-semibold transition '
+ <button
+              onClick={handleFavorites}
+              className={`px-5 py-2 rounded-full font-semibold transition ${
+                isFavorited ? "bg-gray-300 text-gray-700" : "bg-yellow-400 text-white hover:bg-yellow-500"
+              }`}
             >
-             Favorited
+              {isFavorited ? "Favorited" : "Add to Favorites"}
             </button>
           </div>
 
