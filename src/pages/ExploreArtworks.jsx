@@ -1,22 +1,36 @@
 
 
+
 import React, { useState } from 'react';
 import { NavLink, useLoaderData } from 'react-router';
 
 const ExploreArtworks = () => {
   const data = useLoaderData();
   const [searchTerm, setSearchTerm] = useState('');
+  const [category, setCategory] = useState('All');
 
-  
-  const filteredArtworks = data.filter(
-    (art) =>
+  const categories = [
+    'All',
+    'Abstract',
+    'Digital',
+    'Watercolor',
+    'Illustration',
+    'Oil Painting',
+    'Sketch',
+  ];
+
+
+  const filteredArtworks = data.filter((art) => {
+    const matchesSearch =
       art.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      art.artistName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+      art.artistName.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = category === 'All' || art.category === category;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <section className="py-16">
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <h2 className="text-4xl font-bold text-gray-800">Explore Artworks</h2>
 
         <input
@@ -26,6 +40,22 @@ const ExploreArtworks = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="mt-4 w-80 max-w-full px-4 py-2 border rounded-full focus:outline-none focus:ring-2 focus:ring-indigo-500"
         />
+
+        <div className="flex flex-wrap justify-center gap-3 mt-6">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setCategory(cat)}
+              className={`px-5 py-2 rounded-full text-sm font-medium border transition-all duration-300 ${
+                category === cat
+                  ? 'bg-gradient-to-r from-indigo-500 to-purple-500 text-white shadow-md scale-105'
+                  : 'bg-white text-gray-700 hover:bg-indigo-100'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
@@ -57,7 +87,9 @@ const ExploreArtworks = () => {
             </div>
           ))
         ) : (
-          <p className="text-center text-gray-500 col-span-full">No artworks found.</p>
+          <p className="text-center text-gray-500 col-span-full">
+            No artworks found.
+          </p>
         )}
       </div>
     </section>
