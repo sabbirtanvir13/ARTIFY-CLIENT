@@ -61,7 +61,7 @@ const AddArtWorks = () => {
       .catch((err) => {
         console.error(err);
         setLoading(false);
-        alert("⚠️ Something went wrong!");
+        alert(" Something went wrong!");
       });
   };
 
@@ -69,7 +69,7 @@ const AddArtWorks = () => {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="max-w-3xl w-full bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 shadow-2xl rounded-2xl p-8">
         <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-8">
-          ➕ Add New Artwork
+           Add New Artwork
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -136,7 +136,7 @@ const AddArtWorks = () => {
             <option value="Private">Private</option>
           </select>
 
-          {/* Auto-filled User Info */}
+       
           <input
             type="text"
             name="userName"

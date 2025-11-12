@@ -100,11 +100,7 @@ const Navbar = () => {
 
       <div className="navbar-end gap-4">
    
-      {/* <input
-           onChange={(e) => handleTheme(e.target.checked)}
-           type="checkbox"
-           defaultChecked={localStorage.getItem('theme') === "dark"}
-           className="toggle"/> */}
+  
 
 
 <div className="flex items-center gap-2">
@@ -115,7 +111,7 @@ const Navbar = () => {
     className="toggle"
   />
   <span className={`${theme === 'dark' ? 'text-white' : 'text-black'}`}>
-    Dark Mode
+
   </span>
 </div>
 
