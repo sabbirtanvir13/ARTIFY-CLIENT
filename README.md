@@ -15,6 +15,7 @@ Artify  is an online platform showcasing the vibrant artworks of Bangladeshi art
 
  Technologies 
 
- Frontend: React.js, Tailwind CSS  
- Backend: Node.js, Express.js  
- Database: MongoDB
+ React.js, TailwindCSS 
+ firebase  
+ Node.js, Express.js  
+ MongoDB
