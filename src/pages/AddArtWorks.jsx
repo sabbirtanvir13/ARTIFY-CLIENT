@@ -68,7 +68,7 @@ const AddArtWorks = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="max-w-3xl w-full bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50 shadow-2xl rounded-2xl p-8">
-        <h2 className="text-3xl font-extrabold text-gray-800 text-center mb-8">
+        <h2 className="text-3xl font-extrabold text-indigo-400 text-center mb-8">
            Add New Artwork
         </h2>
 

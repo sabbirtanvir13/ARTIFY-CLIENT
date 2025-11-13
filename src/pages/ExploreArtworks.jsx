@@ -31,7 +31,7 @@ const ExploreArtworks = () => {
   return (
     <section className="py-16">
       <div className="text-center mb-10">
-        <h2 className="text-4xl font-bold text-gray-800">Explore Artworks</h2>
+        <h2 className="text-4xl font-bold text-indigo-400">Explore Artworks</h2>
 
         <input
           type="text"

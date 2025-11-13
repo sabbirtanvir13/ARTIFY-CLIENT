@@ -1,30 +1,10 @@
 import React, { use, useEffect, useState, } from 'react';
 import { NavLink } from 'react-router';
 import { AuthContext } from '../contexts/AuthContext';
-
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 const Navbar = () => {
   const { User,  signOutUser } = use(AuthContext)
-
-
-// const [theme,setTheme]=useState(localStorage.getItem('theme')||'light')
-
-// useEffect(()=>{
-//      const html = document.querySelector("html");
-//       html.setAttribute("data-theme",'dark')
-//       localStorage.setItem('theme',theme)
-// },[theme])
-
-
-//   const handleTheme = (checked) => {
-//   setTheme(checked?'dark':'light')
-//         const html = document.querySelector("html");
-// if(checked){
-//   html.setAttribute("data-theme",'dark')
-// }else{
-//   html.setAttribute("data-theme",'light')
-// }
-  
-//   };
 
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
@@ -39,17 +19,17 @@ const Navbar = () => {
   };
 
 
-
-
-
-
-
-
-
   const handleSignOut = () => {
     signOutUser()
       .then(()=>{
-         alert('lagout success')
+        Swal.fire({
+        icon: "success",
+        title: "Logged Out!",
+        text: "You have successfully logged out.",
+        timer: 1500,
+        showConfirmButton: false,
+        timerProgressBar: true,
+      });
       })
       .then()
   }
@@ -69,7 +49,7 @@ const Navbar = () => {
 
   </>
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600 text-gray-100  shadow-sm">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -84,8 +64,8 @@ const Navbar = () => {
             }
           </ul>
         </div>
-        {/* <a className="btn btn-ghost text-xl text-[#1A1A1A]">Artify</a> */}
-           <a className="btn btn-ghost text-xl" style={{ color: theme === 'dark' ? 'white' : '#1A1A1A' }}>Artify</a>
+    
+           <a className="btn btn-ghost text-xl font-bold " >Artify</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">

@@ -59,15 +59,15 @@ const MyGallery = () => {
   };
 
   if (loading) {
-    return <div className="text-center my-20">Loading artworks...</div>;
+    return <div className="text-center my-20"><span className="loading loading-spinner text-success"></span></div>;
   }
 
   return (
     <div className="max-w-6xl mx-auto my-10 px-4">
-      <h1 className="text-3xl font-bold mb-6 text-center">My Gallery</h1>
+      <h1 className="text-3xl font-bold mb-6 text-indigo-400 text-center">My Gallery</h1>
 
       {models.length === 0 ? (
-        <p className="text-center text-gray-600">You have no artworks yet.</p>
+        <p className="text-center text-gray-600">You have no artworks.</p>
       ) : (
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {models.map((art) => (

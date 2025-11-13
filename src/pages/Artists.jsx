@@ -34,9 +34,9 @@ const Artists = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 ">
       <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-gray-800 mb-12">
+        <h2 className="text-4xl font-bold text-indigo-400 mb-12">
           Top Artists of the Week
         </h2>
 
