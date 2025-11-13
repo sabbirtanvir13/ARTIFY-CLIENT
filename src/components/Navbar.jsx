@@ -35,14 +35,14 @@ const Navbar = () => {
   }
   const links = <>
 
-    <NavLink className='mr-3 hover:text-black ' to='/'><li>Home</li></NavLink>
-    <NavLink className='mr-3' to='/exploreartworks'><li>Explore Artworks</li></NavLink>
+    <NavLink className='mr-3 hover:text-pink-400 ' to='/'><li>Home</li></NavLink>
+    <NavLink className='mr-3 hover:text-pink-400' to='/exploreartworks'><li>Explore Artworks</li></NavLink>
 
     {
       User && <>
-        <NavLink className='mr-3' to='/addart'><li>Add Artwork</li></NavLink>
-        <NavLink className='mr-3' to='/gallery'><li>My Gallery</li></NavLink>
-        <NavLink className='mr-3' to='/favorites'><li>My Favorites</li></NavLink>
+        <NavLink className='mr-3   hover:text-pink-400' to='/addart'><li>Add Artwork</li></NavLink>
+        <NavLink className='mr-3  hover:text-pink-400' to='/gallery'><li>My Gallery</li></NavLink>
+        <NavLink className='mr-3 hover:text-pink-400' to='/favorites'><li>My Favorites</li></NavLink>
 
       </>
     }
