@@ -35,7 +35,7 @@ const Navbar = () => {
   }
   const links = <>
 
-    <NavLink className='mr-3 ' to='/'><li>Home</li></NavLink>
+    <NavLink className='mr-3 hover:text-black ' to='/'><li>Home</li></NavLink>
     <NavLink className='mr-3' to='/exploreartworks'><li>Explore Artworks</li></NavLink>
 
     {
