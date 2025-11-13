@@ -1,6 +1,6 @@
  Artify
 
- Live Site: https://your-live-site-url.com](https://your-live-site-url.com
+ Live Site:https://fluffy-palmier-ff2ab6.netlify.app/
 
 Artify  is an online platform showcasing the vibrant artworks of Bangladeshi artists. Users can explore paintings, digital art, sculptures, and cultural pieces from emerging and established artists.
 
