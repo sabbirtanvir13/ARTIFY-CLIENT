@@ -1,16 +1,20 @@
-# React + Vite
+ Artify
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ Live Site: https://your-live-site-url.com](https://your-live-site-url.com
 
-Currently, two official plugins are available:
+Artify  is an online platform showcasing the vibrant artworks of Bangladeshi artists. Users can explore paintings, digital art, sculptures, and cultural pieces from emerging and established artists.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Features
 
-## React Compiler
+  1- Browse a wide range of art categories including Abstract, Modern, Digital, Cultural, and Sculptures.  
+  2- View detailed information about each artist, including their total artworks, biography, and portfolio.  
+  3- Click on each artwork to see high-resolution images, descriptions, dimensions, mediums, and price information.  
+  4- Easily search for artworks by category, artist, or price to find your perfect piece.  
+  5- Fully responsive and mobile-friendly layout for seamless browsing on any device.  
+  6- Safe and intuitive interface for users to navigate, favorite, or explore artworks.  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+ Technologies 
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+ Frontend: React.js, Tailwind CSS  
+ Backend: Node.js, Express.js  
+ Database: MongoDB
