@@ -48,7 +48,7 @@ firebase-admin
 
 Clone the repository:
 
-git clone <REPO_LINK>
+git clone <https://github.com/sabbirtanvir13/ARTIFY-CLIENT.git>
 cd artify
 Install dependencies:
 
