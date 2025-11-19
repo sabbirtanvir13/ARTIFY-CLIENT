@@ -1,21 +1,78 @@
- Artify
+ 
 
- Live Site:https://fluffy-palmier-ff2ab6.netlify.app/
+🎨 ARTIFY – A Creative Artwork Showcase Platform
+Description:
+Artify is a full-stack MERN application that allows artists to showcase, explore, and manage digital artworks. The platform is modern, visually aesthetic, and user-friendly. Artists can upload their creative works, browse galleries, save favorites, and interact through likes.
 
-Artify  is an online platform showcasing the vibrant artworks of Bangladeshi artists. Users can explore paintings, digital art, sculptures, and cultural pieces from emerging and established artists.
 
- Features
+⚡ Key Features
+Modern Home Page: Dynamic slider, Featured Artworks, Top Artists & Community Highlights.
 
-  1- Browse a wide range of art categories including Abstract, Modern, Digital, Cultural, and Sculptures.  
-  2- View detailed information about each artist, including their total artworks, biography, and portfolio.  
-  3- Click on each artwork to see high-resolution images, descriptions, dimensions, mediums, and price information.  
-  4- Easily search for artworks by category, artist, or price to find your perfect piece.  
-  5- Fully responsive and mobile-friendly layout for seamless browsing on any device.  
-  6- Safe and intuitive interface for users to navigate, favorite, or explore artworks.  
+Secure Authentication: Firebase Email/Password and Google Login with full route protection.
 
- Technologies 
+CRUD Artwork Management: Users can add, update, delete, and manage their artworks.
 
- React.js, TailwindCSS 
- firebase  
- Node.js, Express.js  
- MongoDB
+Explore Artworks: Search, category filters, and like system.
+
+Favorites System: Save and remove favorite artworks with real-time updates.
+
+Private Routes: Authenticated users remain logged in even after page reload.
+
+Responsive UI: Fully optimized for mobile, tablet, and desktop.
+
+My Gallery: View all artworks of the logged-in user with update & delete options.
+
+🛠️ Technologies Used
+Frontend: React, React Router, Tailwind CSS, SweetAlert
+
+Backend: Node.js, Express.js
+
+Database: MongoDB
+
+Authentication: Firebase Auth
+
+📦 Dependencies
+# Frontend
+react
+react-router-dom
+tailwindcss
+sweetalert2
+axios
+
+# Backend
+express
+mongoose
+cors
+dotenv
+firebase-admin
+
+Clone the repository:
+
+git clone <REPO_LINK>
+cd artify
+Install dependencies:
+
+# Frontend
+cd client
+npm install
+
+# Backend
+cd ../server
+npm install
+Setup Environment Variables:
+Add MongoDB URI and Firebase configuration in server/.env.
+
+Run the Application:
+
+# Backend
+cd server
+npm start
+
+# Frontend
+cd ../client
+npm start
+Open in Browser:
+http://localhost:3000
+
+🔗 Live Website
+https://lnkd.in/e58QRP7x
