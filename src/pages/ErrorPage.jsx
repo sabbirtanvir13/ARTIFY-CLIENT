@@ -18,7 +18,7 @@ const ErrorPage = () => {
         404
       </h1>
       <p className="text-xl md:text-2xl text-gray-600 mb-6 text-center">
-        Oops! The page you are looking for does not exist.
+        Oops! Sorry  The page you are looking for does not exist.
       </p>
 <Link to="/">
 
