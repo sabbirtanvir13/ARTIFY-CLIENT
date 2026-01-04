@@ -10,13 +10,13 @@ export default function BlogSection() {
   }, []);
 
   return (
-    <section className="py-20 bg-gray-100 dark:bg-gray-950">
-      <h2 className="text-4xl font-bold text-center mb-10 text-gray-900 dark:text-gray-100">Blog</h2>
+    <section className="py-20 ">
+      <h2 className="text-4xl font-bold text-center mb-10 text-indigo-400">Blog</h2>
       <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-6 px-4">
         {blogs.map((b, i) => (
-          <div key={i} className="p-6 rounded-xl shadow-lg bg-white dark:bg-gray-800">
-            <h3 className="font-bold text-xl text-gray-900 dark:text-gray-100">{b.title}</h3>
-            <p className="text-gray-700 dark:text-gray-200 mt-2">{b.description}</p>
+          <div key={i} className="p-6 rounded-xl shadow-lg bg-white ">
+            <h3 className="font-bold text-xl text-black">{b.title}</h3>
+            <p className="text-gray-700 text-black mt-2">{b.description}</p>
           </div>
         ))}
       </div>

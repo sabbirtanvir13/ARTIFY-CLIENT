@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Container from "./Container";
 
 export default function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -17,8 +18,9 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="py-20  text-center">
-      <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">Subscribe to Newsletter</h2>
+    <Container>
+    <section className="py-20 bg-gray-100 text-center">
+      <h2 className="text-4xl font-bold mb-6 text-indigo-400">Subscribe to Newsletter</h2>
       <form onSubmit={handleSubmit} className="flex flex-col md:flex-row justify-center max-w-xl mx-auto gap-4">
         <input
           type="email"
@@ -34,5 +36,6 @@ export default function NewsletterSection() {
       </form>
       {message && <p className="mt-4 text-gray-700 dark:text-gray-300">{message}</p>}
     </section>
+    </Container>
   );
 }

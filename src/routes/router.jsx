@@ -19,6 +19,10 @@ import MyFavorites from "../pages/MyFavorites";
 import DashboardLayout from "../layouts/DashboardLayout";
 import Profile from "../pages/Profile";
 import DashboardOverview from "../components/DashboardOverview";
+
+import ContactSection from "../pages/ContactSection";
+import AboutSection from "../pages/AboutSection";
+// import AboutSection from "../pages/AboutSection";
 // import UserDashboardOverview from "../components/UserDashboardOverview";
 
 const router = createBrowserRouter([
@@ -34,15 +38,16 @@ const router = createBrowserRouter([
  
       {
         path: "/artDetail/:id",
-        element: <PrivateRoute>
+        element: 
           <ArtworkDetail />,
-        </PrivateRoute>,
+     
         loader: ({ params }) => fetch(`https://artify-server-ecru.vercel.app/artifys/${params.id}`)
       },
 
-   
-   
- 
+    { path: "about", element: <AboutSection/> },
+      { path: "contact", element: <ContactSection /> },
+
+
 
       {
         path: "/exploreartworks",

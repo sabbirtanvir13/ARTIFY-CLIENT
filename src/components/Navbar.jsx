@@ -102,7 +102,15 @@
 
 import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router";
-import { FaHome, FaPalette, FaPlusCircle, FaImages, FaHeart, FaTachometerAlt, FaSignInAlt, FaUserPlus } from "react-icons/fa";
+import { 
+  FaHome, 
+  FaPalette, 
+  FaInfoCircle, 
+  FaEnvelope, 
+  FaTachometerAlt, 
+  FaSignInAlt, 
+  FaUserPlus 
+} from "react-icons/fa";
 import useAuth from "../hooks/useAuth";
 
 const Navbar = () => {
@@ -124,9 +132,9 @@ const Navbar = () => {
       <NavLink to="/exploreartworks" className={linkClass}><FaPalette /> Explore</NavLink>
       {User && (
         <>
-          <NavLink to="/addart" className={linkClass}><FaPlusCircle /> Add Artwork</NavLink>
-          <NavLink to="/gallery" className={linkClass}><FaImages /> My Gallery</NavLink>
-          <NavLink to="/favorites" className={linkClass}><FaHeart /> Favorites</NavLink>
+          <NavLink to="/about" className={linkClass}><  FaInfoCircle/> About</NavLink>
+          <NavLink to="/contact" className={linkClass}><  FaEnvelope /> Contact</NavLink>
+       
         </>
       )}
     </>
