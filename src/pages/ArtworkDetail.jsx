@@ -16,7 +16,7 @@ const handleLike = async () => {
   if (!User) return alert("You must be logged in to like an artwork");
 
   try {
-    const res = await fetch(`http://localhost:3000/artifys/${artwork._id}/like`, {
+    const res = await fetch(`https://artify-server-ecru.vercel.app/artifys/${artwork._id}/like`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: User.email }),
@@ -45,7 +45,7 @@ const handleFavorite = async () => {
     return;
   }
 
-  const res = await fetch("http://localhost:3000/favorites", {
+  const res = await fetch("https://artify-server-ecru.vercel.app/favorites", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

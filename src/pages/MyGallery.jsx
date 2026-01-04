@@ -13,7 +13,7 @@ const MyGallery = () => {
 
   useEffect(() => {
     if (User) {
-      fetch(`http://localhost:3000/my-artworks?email=${User.email}`)
+      fetch(`https://artify-server-ecru.vercel.app/my-artworks?email=${User.email}`)
         .then((res) => res.json())
         .then((data) => {
           setModels(data);
@@ -36,7 +36,7 @@ const MyGallery = () => {
 
     if (result.isConfirmed) {
       try {
-        const res = await fetch(`http://localhost:3000/artifys/${id}`, {
+        const res = await fetch(`https://artify-server-ecru.vercel.app/artifys/${id}`, {
           method: "DELETE",
         });
         const data = await res.json();
@@ -120,7 +120,7 @@ const MyGallery = () => {
 
             try {
               const res = await fetch(
-                `http://localhost:3000/artifys/${selectedArt._id}`,
+                `https://artify-server-ecru.vercel.app/artifys/${selectedArt._id}`,
                 {
                   method: "PUT",
                   headers: { "Content-Type": "application/json" },

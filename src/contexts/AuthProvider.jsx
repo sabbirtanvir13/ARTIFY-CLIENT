@@ -49,6 +49,7 @@ const AuthProvider = ({ children }) => {
   const authInfo = {
     createUser,
     User,
+    setUser,
     loading,
     singInUser,
     singInWithGoogle,
@@ -64,3 +65,60 @@ const AuthProvider = ({ children }) => {
 };
 
 export default AuthProvider;
+
+
+
+// import { useEffect, useState } from "react";
+// import { AuthContext } from "./AuthContext";
+// import {
+//   createUserWithEmailAndPassword,
+//   GoogleAuthProvider,
+//   onAuthStateChanged,
+//   signInWithEmailAndPassword,
+//   signInWithPopup,
+//   signOut,
+// } from "firebase/auth";
+// import { auth } from "../firebase/firebase.init";
+
+// const googleProvider = new GoogleAuthProvider();
+
+// const AuthProvider = ({ children }) => {
+//   const [user, setUser] = useState(null);
+//   const [loading, setLoading] = useState(true);
+
+//   const createUser = (email, password) =>
+//     createUserWithEmailAndPassword(auth, email, password);
+
+//   const signInUser = (email, password) =>
+//     signInWithEmailAndPassword(auth, email, password);
+
+//   const signInWithGoogle = () =>
+//     signInWithPopup(auth, googleProvider);
+
+//   const logOut = () => signOut(auth);
+
+//   useEffect(() => {
+//     const unsubscribe = onAuthStateChanged(auth, currentUser => {
+//       setUser(currentUser);
+//       setLoading(false);
+//     });
+//     return () => unsubscribe();
+//   }, []);
+
+//   return (
+//     <AuthContext.Provider
+//       value={{
+//         user,
+//         loading,
+//         createUser,
+//         signInUser,
+//         signInWithGoogle,
+//         logOut,
+//       }}
+//     >
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };
+
+// export default AuthProvider;

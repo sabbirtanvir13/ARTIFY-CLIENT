@@ -16,6 +16,10 @@ import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "../contexts/PrivateRoute";
 import MyGallery from "../pages/MyGallery";
 import MyFavorites from "../pages/MyFavorites";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Profile from "../pages/Profile";
+import DashboardOverview from "../components/DashboardOverview";
+// import UserDashboardOverview from "../components/UserDashboardOverview";
 
 const router = createBrowserRouter([
   {
@@ -33,32 +37,17 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ArtworkDetail />,
         </PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:3000/artifys/${params.id}`)
+        loader: ({ params }) => fetch(`https://artify-server-ecru.vercel.app/artifys/${params.id}`)
       },
 
-      {
-        path: "/addart",
-        element:<PrivateRoute>
-           <AddArtWorks></AddArtWorks>
-        </PrivateRoute>
-      },
-      {
-        path: "/gallery",
-        element:<PrivateRoute>
-         <MyGallery></MyGallery>
-        </PrivateRoute>
-      },
-      {
-        path: "/favorites",
-        element:<PrivateRoute>
-          <MyFavorites></MyFavorites>
-        </PrivateRoute>
-      },
+   
+   
+ 
 
       {
         path: "/exploreartworks",
         element: <ExploreArtworks></ExploreArtworks>,
-        loader: () => fetch('http://localhost:3000/artifys')
+        loader: () => fetch('https://artify-server-ecru.vercel.app/artifys')
       },
     ],
   },
@@ -78,10 +67,52 @@ const router = createBrowserRouter([
 
     ],
   },
-  {
-    path: "/art",
-    element: <h2>art layout</h2>,
-  },
+
+
+{
+  path: '/dashboard',
+  element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+  children: [
+    {
+      path: "addart",
+      element: <AddArtWorks />
+    },
+       {
+        path: "gallery",
+        element:<PrivateRoute>
+         <MyGallery></MyGallery>
+        </PrivateRoute>
+      },
+       {
+        path: "profile",
+        element:<PrivateRoute>
+       <Profile></Profile>
+        </PrivateRoute>
+      },
+
+     {
+        path: "favorites",
+        element:<PrivateRoute>
+          <MyFavorites></MyFavorites>
+        </PrivateRoute>
+      },
+     {
+        path: "DashboardOverview",
+        element:<PrivateRoute>
+      <DashboardOverview></DashboardOverview>
+        </PrivateRoute>
+      },
+    //  {
+    //     path: "userDashboardOverview",
+    //     element:<PrivateRoute>
+    //       <UserDashboardOverview></UserDashboardOverview>
+    //     </PrivateRoute>
+    //   },
+
+
+  ]
+},
+
   {
     path: "*",
     element: <ErrorPage></ErrorPage>

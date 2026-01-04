@@ -17,7 +17,7 @@ const FeaturedArtworks = ({FeaturedArtpromise}) => {
         {FeaturedArt.map((art) => (
           <div
             key={art._id}
-            className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 hover:scale-105 duration-300"
+            className="bg-white rounded-3xl overflow-hidden shadow hover:shadow transition transform hover:-translate-y-2  duration-300"
           >
             <img
               src={art.image}

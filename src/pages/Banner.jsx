@@ -3,6 +3,7 @@
 import React from 'react';
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
+import Container from './Container';
 
 const Banner = () => {
   const images = [
@@ -24,7 +25,8 @@ const Banner = () => {
   ];
 
   return (
-    <div className="banner-slider">
+    <Container>
+ <div className="banner-slider mt-6">
       <ImageGallery 
         items={images} 
         showThumbnails={true} 
@@ -33,6 +35,8 @@ const Banner = () => {
         slideInterval={4000} 
       />
     </div>
+    </Container>
+   
   );
 };
 

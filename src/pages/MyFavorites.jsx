@@ -10,7 +10,7 @@ const MyFavorites = () => {
 
   useEffect(() => {
     if (!User) return;
-    fetch(`http://localhost:3000/favorites?email=${User.email}`)
+    fetch(`https://artify-server-ecru.vercel.app/favorites?email=${User.email}`)
       .then((res) => res.json())
       .then((data) => {
         setFavorites(data);
@@ -30,7 +30,7 @@ const MyFavorites = () => {
       confirmButtonText: "Yes, remove it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/favorites/${id}`, 
+        fetch(`https://artify-server-ecru.vercel.app/favorites/${id}`, 
           { method: "DELETE" })
           .then((res) => res.json())
           .then(() => {
