@@ -56,13 +56,26 @@ const router = createBrowserRouter([
       },
 
  
-      {
-        path: "/artDetail/:id",
-        element: 
-          <ArtworkDetail />,
+      // {
+      //   path: "/artDetail/:id",
+      //   element: 
+      //     <ArtworkDetail />,
      
-        loader: ({ params }) => fetch(`https://artify-server-ecru.vercel.app/artifys/${params.id}`)
-      },
+      //   loader: ({ params }) => fetch(`https://artify-server-ecru.vercel.app/artifys/${params.id}`)
+      // },
+
+{
+  path: "/artDetail/:id",
+  element: <ArtworkDetail />,
+  loader: async ({ params }) => {
+    const res = await fetch(`https://artify-server-ecru.vercel.app/artifys/${params.id}`);
+    if (!res.ok) throw new Error("Artwork not found");
+    const data = await res.json(); // <-- parse JSON here
+    return { result: data };       // <-- wrap in an object with `result`
+  },
+}
+
+
 
     { path: "about", element: <AboutSection/> },
       { path: "contact", element: <ContactSection /> },
