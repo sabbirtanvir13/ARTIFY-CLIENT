@@ -68,7 +68,7 @@ const handleFavorite = async () => {
 
 
   // const isLiked = User && artwork.likedBy?.includes(User.email);
-  artwork.likedBy?.includes(User.email) || false
+  const isLiked = User && artwork.likedBy && artwork.likedBy.includes(User.email);
 
 
   return (
