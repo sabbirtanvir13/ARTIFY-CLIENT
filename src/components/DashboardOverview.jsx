@@ -16,7 +16,7 @@ const DashboardOverview = () => {
   const [stats, setStats] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/stats")
+    fetch(`${import.meta.env.VITE_API_URL}/stats`)
       .then((res) => res.json())
       .then((data) => setStats(data));
   }, []);

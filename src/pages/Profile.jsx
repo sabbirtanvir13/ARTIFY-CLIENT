@@ -62,7 +62,7 @@ import { useState } from "react";
 
 const Profile = () => {
   const { User } = useAuth();
-  const [role, isRoleLoading] = useRole();
+  const [role, ] = useRole();
   const { updateUserProfile } = useUpdateProfile();
   const { changePassword } = useChangePassword();
 

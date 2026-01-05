@@ -7,7 +7,7 @@ export default function NewsletterSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch("https://artify-server-ecru.vercel.app/newsletter", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/newsletter`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email }),

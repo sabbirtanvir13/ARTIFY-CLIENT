@@ -4,7 +4,7 @@ export default function BlogSection() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/blogs")
+    fetch(`${import.meta.env.VITE_API_URL}/blogs`)
       .then(res => res.json())
       .then(data => setBlogs(data));
   }, []);

@@ -5,7 +5,7 @@ export default function TestimonialsSection() {
   const [testimonials, setTestimonials] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/testimonials")
+    fetch(`${import.meta.env.VITE_API_URL}/testimonials`)
       .then(res => res.json())
       .then(data => setTestimonials(data));
   }, []);
