@@ -135,9 +135,7 @@ const Sidebar = () => {
             <Link to="/dashboard/favorites" className={linkStyle}>
               <AiOutlineHeart size={22} /> Favorites
             </Link>
-            <Link to="/dashboard/my-gallery" className={linkStyle}>
-              <AiOutlineUser size={22} /> My Gallery
-            </Link>
+           
           </div>
         )}
       </div>

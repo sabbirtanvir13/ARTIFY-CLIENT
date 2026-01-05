@@ -134,7 +134,7 @@ import swal from "sweetalert";
 const Register = () => {
   const { singInWithGoogle, createUser, setUser } = React.useContext(AuthContext);
   const navigate = useNavigate();
-  const API_URL = "http://localhost:3000";
+ 
 
   // ===== Register with Email/Password =====
   const handleRegister = async (e) => {
@@ -168,7 +168,7 @@ const Register = () => {
       });
 
       // 2️⃣ Backend MongoDB
-      const res = await fetch(`${API_URL}/users/register`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/users/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -216,7 +216,7 @@ const Register = () => {
 
       // Send Google user to backend
       const randomPassword = Math.random().toString(36).slice(-8);
-      await fetch(`${API_URL}/users/register`, {
+      await fetch(`${import.meta.env.VITE_API_URL}/users/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
