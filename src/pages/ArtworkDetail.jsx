@@ -207,10 +207,10 @@ const ArtworkDetail = () => {
     }
   };
 
-  // Safe check for likedBy
-  const isLiked = User && (artwork.likedBy || []).includes(User.email);
 
-  // ⚠️ Guard for undefined artwork
+  // const isLiked = User && (artwork.likedBy || []).includes(User.email);
+ const isLiked = User && artwork.likedBy && artwork.likedBy.includes(User.email);
+
   if (!artwork) {
     return <p className="text-center py-10">Loading artwork details...</p>;
   }
