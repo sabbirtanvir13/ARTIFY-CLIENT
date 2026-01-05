@@ -141,17 +141,22 @@ import "sweetalert2/dist/sweetalert2.min.css";
 
 const ArtworkDetail = () => {
   const data = useLoaderData();
-  const art = data?.result || null; // safe fallback
+  const art = data?.result || null;
   const { User } = useContext(AuthContext);
 
   const [artwork, setArtwork] = useState(art);
 
-  // Optional: if you want to refetch on mount
+  // Ensure artwork state is set
   useEffect(() => {
     if (!artwork && art) {
       setArtwork(art);
     }
   }, [art, artwork]);
+
+  // ⚠️ Guard everything that uses artwork
+  if (!artwork) {
+    return <p className="text-center py-10">Loading artwork details...</p>;
+  }
 
   const handleLike = async () => {
     if (!User) return alert("You must be logged in to like an artwork");
@@ -207,14 +212,8 @@ const ArtworkDetail = () => {
     }
   };
 
-
- 
-//  const isLiked = User && artwork.likedBy && artwork.likedBy.includes(User.email);
+  // ✅ Compute isLiked only after artwork is confirmed to exist
   const isLiked = User && artwork.likedBy?.includes(User.email);
-
-  if (!artwork) {
-    return <p className="text-center py-10">Loading artwork details...</p>;
-  }
 
   return (
     <section className="max-w-6xl mx-auto my-16 px-6 md:px-10">
