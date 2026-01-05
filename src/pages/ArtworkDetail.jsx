@@ -208,8 +208,9 @@ const ArtworkDetail = () => {
   };
 
 
-  // const isLiked = User && (artwork.likedBy || []).includes(User.email);
- const isLiked = User && artwork.likedBy && artwork.likedBy.includes(User.email);
+ 
+//  const isLiked = User && artwork.likedBy && artwork.likedBy.includes(User.email);
+  const isLiked = User && artwork.likedBy?.includes(User.email);
 
   if (!artwork) {
     return <p className="text-center py-10">Loading artwork details...</p>;
