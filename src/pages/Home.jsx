@@ -21,7 +21,7 @@ const Home = () => {
     <FeaturedArtworks FeaturedArtpromise={FeaturedArtpromise}></FeaturedArtworks>
     <Artists></Artists>
     <CommunityHighlights></CommunityHighlights>
-      {/* 6️⃣ Testimonials */}
+     
       <TestimonialsSection />
 
      

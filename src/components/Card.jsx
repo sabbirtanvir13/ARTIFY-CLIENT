@@ -1,6 +1,6 @@
 export const Card = ({ title, value, color }) => (
   <div
-    className="bg-white shadow rounded-xl p-6 border-l-4"
+    className="shadow rounded-xl p-6 border-l-4"
     style={{ borderColor: color }}
   >
     <p className="text-gray-500">{title}</p>

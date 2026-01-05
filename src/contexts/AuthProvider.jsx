@@ -16,8 +16,7 @@ const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [User, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-
+  const [loading, setLoading] = useState(true)
   const createUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -116,6 +115,97 @@ export default AuthProvider;
 //         logOut,
 //       }}
 //     >
+//       {children}
+//     </AuthContext.Provider>
+//   );
+// };
+
+// export default AuthProvider;
+
+
+
+// import React, {  useState, useEffect } from "react";
+// import { auth } from "../firebase/firebase.init";
+// import {
+//   createUserWithEmailAndPassword,
+//   signInWithEmailAndPassword,
+//   signInWithPopup,
+//   GoogleAuthProvider,
+//   signOut,
+//   onAuthStateChanged,
+// } from "firebase/auth";
+
+// const googleProvider = new GoogleAuthProvider();
+
+// const AuthProvider = ({ children }) => {
+//   const [User, setUser] = useState(null);
+//   const [loading, setLoading] = useState(true);
+//   const [token, setToken] = useState(null); // <-- Firebase token
+
+//   const createUser = async (email, password) => {
+//     setLoading(true);
+//     const result = await createUserWithEmailAndPassword(auth, email, password);
+//     const idToken = await result.user.getIdToken();
+//     setToken(idToken);
+//     setUser(result.user);
+//     setLoading(false);
+//     return result;
+//   };
+
+//   const singInUser = async (email, password) => {
+//     setLoading(true);
+//     const result = await signInWithEmailAndPassword(auth, email, password);
+//     const idToken = await result.user.getIdToken();
+//     setToken(idToken);
+//     setUser(result.user);
+//     setLoading(false);
+//     return result;
+//   };
+
+//   const singInWithGoogle = async () => {
+//     setLoading(true);
+//     const result = await signInWithPopup(auth, googleProvider);
+//     const idToken = await result.user.getIdToken();
+//     setToken(idToken);
+//     setUser(result.user);
+//     setLoading(false);
+//     return result;
+//   };
+
+//   const signOutUser = async () => {
+//     setLoading(true);
+//     await signOut(auth);
+//     setUser(null);
+//     setToken(null);
+//     setLoading(false);
+//   };
+
+//   useEffect(() => {
+//     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
+//       setUser(currentUser);
+//       if (currentUser) {
+//         const idToken = await currentUser.getIdToken();
+//         setToken(idToken);
+//       } else {
+//         setToken(null);
+//       }
+//       setLoading(false);
+//     });
+//     return () => unsubscribe();
+//   }, []);
+
+//   const authInfo = {
+//     User,
+//     loading,
+//     token, // <-- এখন এখানে token আছে
+//     createUser,
+//     singInUser,
+//     singInWithGoogle,
+//     signOutUser,
+//   };
+
+//   return (
+//     <AuthContext.Provider value={authInfo}>
 //       {children}
 //     </AuthContext.Provider>
 //   );

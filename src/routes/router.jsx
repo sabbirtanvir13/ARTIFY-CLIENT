@@ -22,6 +22,7 @@ import DashboardOverview from "../components/DashboardOverview";
 
 import ContactSection from "../pages/ContactSection";
 import AboutSection from "../pages/AboutSection";
+import MyLikes from "../pages/MyLikes";
 // import AboutSection from "../pages/AboutSection";
 // import UserDashboardOverview from "../components/UserDashboardOverview";
 
@@ -107,12 +108,12 @@ const router = createBrowserRouter([
       <DashboardOverview></DashboardOverview>
         </PrivateRoute>
       },
-    //  {
-    //     path: "userDashboardOverview",
-    //     element:<PrivateRoute>
-    //       <UserDashboardOverview></UserDashboardOverview>
-    //     </PrivateRoute>
-    //   },
+     {
+        path: "my-likes",
+        element:<PrivateRoute>
+        <MyLikes></MyLikes>
+        </PrivateRoute>
+      },
 
 
   ]

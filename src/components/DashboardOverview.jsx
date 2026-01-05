@@ -41,7 +41,7 @@ const DashboardOverview = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
         {/* Bar Chart */}
-        <div className="bg-white p-6 rounded-xl shadow">
+        <div className="p-6 rounded-xl shadow">
           <h2 className="text-xl font-semibold mb-4">
             Platform Statistics
           </h2>
@@ -57,7 +57,7 @@ const DashboardOverview = () => {
         </div>
 
         {/* Pie Chart */}
-        <div className="bg-white p-6 rounded-xl shadow">
+        <div className=" p-6 rounded-xl shadow">
           <h2 className="text-xl font-semibold mb-4">
             Data Distribution
           </h2>
@@ -82,13 +82,13 @@ const DashboardOverview = () => {
       </div>
 
       {/* ===== Table ===== */}
-      <div className="bg-white shadow rounded-xl p-6">
+      <div className=" shadow rounded-xl p-6">
         <h2 className="text-xl font-semibold mb-4">
           Statistics Table
         </h2>
 
         <table className="w-full border text-center">
-          <thead className="bg-gray-100">
+          <thead className="">
             <tr>
               <th className="p-3 border">Category</th>
               <th className="p-3 border">Count</th>
@@ -97,7 +97,7 @@ const DashboardOverview = () => {
 
           <tbody>
             {stats.map((item, i) => (
-              <tr key={i} className="hover:bg-gray-50">
+              <tr key={i} className="">
                 <td className="p-3 border">{item.label}</td>
                 <td className="p-3 border font-semibold">{item.value}</td>
               </tr>
