@@ -23,6 +23,9 @@ import DashboardOverview from "../components/DashboardOverview";
 import ContactSection from "../pages/ContactSection";
 import AboutSection from "../pages/AboutSection";
 import MyLikes from "../pages/MyLikes";
+import Help from "../pages/Help";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import TermsOfService from "../pages/TermsOfService";
 // import AboutSection from "../pages/AboutSection";
 // import UserDashboardOverview from "../components/UserDashboardOverview";
 
@@ -36,6 +39,22 @@ const router = createBrowserRouter([
         element: <Home></Home>,
        
       },
+
+            {
+        path: "/help",
+        element: <Help />,
+      },
+ 
+            {
+        path: "/privacy",
+        element: <PrivacyPolicy />,
+      },
+      
+            {
+        path: "/terms",
+        element: <TermsOfService />,
+      },
+
  
       {
         path: "/artDetail/:id",
